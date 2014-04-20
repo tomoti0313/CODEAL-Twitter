@@ -14,6 +14,8 @@
 
 @property UIImage *image;
 @property NSString *name;
+@property NSString *jname;
+@property NSString *time;
 @property NSString *text;
 @property NSString *identifier;
 @property NSString *idStr;

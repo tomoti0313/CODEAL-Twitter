@@ -10,6 +10,8 @@
 
 @interface DetailViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *nameView;
+@property (weak, nonatomic) IBOutlet UITextView *jnameView;
+@property (weak, nonatomic) IBOutlet UITextView *timeView;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
@@ -31,9 +33,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationItem.title =@"DetailView";
+    self.navigationItem.title =@"ツイート";
     self.imageView.image = self.image;
     self.nameView.text = self.name;
+    self.jnameView.text = self.jname;
+    self.timeView.text = self.time;
     self.textView.text = self.text;
 }
 
@@ -53,6 +57,8 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+    //RTボタン
 - (IBAction)retweetAction:(id)sender {
     ACAccountStore *accountStore = [[ACAccountStore alloc] init];
     ACAccount *account = [accountStore accountWithIdentifier:self.identifier]; //アカウント情報の引き継ぎ
@@ -87,5 +93,77 @@
     }];
 
 }
+
+    //ふぁぼボタン
+- (IBAction)favoriteAction:(id)sender {
+    ACAccountStore *accountStore = [[ACAccountStore alloc] init];
+    ACAccount *account = [accountStore accountWithIdentifier:self.identifier]; //アカウント情報の引き継ぎ
+    NSString *urlString = [NSString stringWithFormat:@"https://api.twitter.com/1/favorites/create/%@.json",self.idStr];
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodPOST URL:url parameters:nil];
+    [request setAccount:account];
+    
+    UIApplication *application = [UIApplication sharedApplication];
+    application.networkActivityIndicatorVisible = YES;
+    
+    [request performRequestWithHandler:^(NSData *responseData,NSHTTPURLResponse *urlResponse,NSError *error){
+        if(responseData){
+            NSInteger statusCode = urlResponse.statusCode;
+            if(statusCode >= 200 && statusCode < 300){
+                NSDictionary *postResponseData =
+                [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:NULL];
+                NSLog(@"[SUCCESS!] Created Tweet with ID: %@",postResponseData[@"id_str"]);
+            }
+            else{
+                NSLog(@"[ERROR] Server responded: status code %1d %@",statusCode,[NSHTTPURLResponse localizedStringForStatusCode:statusCode]);
+            }
+        }
+        else{
+            NSLog(@"[ERROR] An error occurred while posting: %@", [error localizedDescription]);
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIApplication *application = [UIApplication sharedApplication];
+            application.networkActivityIndicatorVisible = NO;
+        });
+    }];
+    
+
+}
+    //ふぁぼをやめるボタン
+- (IBAction)destryAction:(id)sender {
+    ACAccountStore *accountStore = [[ACAccountStore alloc] init];
+    ACAccount *account = [accountStore accountWithIdentifier:self.identifier];
+    NSString *urlString = [NSString stringWithFormat:@"https://api.twitter.com/1/favorites/destroy/%@.json",self.idStr];
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodPOST URL:url parameters:nil];
+    [request setAccount:account];
+    
+    UIApplication *application = [UIApplication sharedApplication];
+    application.networkActivityIndicatorVisible = YES;
+    
+    [request performRequestWithHandler:^(NSData *responseData,NSHTTPURLResponse *urlResponse,NSError *error){
+        if(responseData){
+            NSInteger statusCode = urlResponse.statusCode;
+            if(statusCode >= 200 && statusCode < 300){
+                NSDictionary *postResponseData =
+                [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:NULL];
+                NSLog(@"[SUCCESS!] Created Tweet with ID: %@",postResponseData[@"id_str"]);
+            }
+            else{
+                NSLog(@"[ERROR] Server responded: status code %1d %@",statusCode,[NSHTTPURLResponse localizedStringForStatusCode:statusCode]);
+            }
+        }
+        else{
+            NSLog(@"[ERROR] An error occurred while posting: %@", [error localizedDescription]);
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIApplication *application = [UIApplication sharedApplication];
+            application.networkActivityIndicatorVisible = NO;
+        });
+    }];
+}
+
 
 @end

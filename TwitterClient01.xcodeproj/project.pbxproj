@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D1D3D741904269D0089BC2B /* Icon@2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D1D3D731904269D0089BC2B /* Icon@2.png */; };
+		0D1D3D7C19042F830089BC2B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D1D3D7B19042F830089BC2B /* Default@2x.png */; };
+		0D1D3D82190465020089BC2B /* DirectMessagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1D3D81190465020089BC2B /* DirectMessagesTableViewController.m */; };
 		0D60563218F8F6100028B548 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D60563118F8F6100028B548 /* Foundation.framework */; };
 		0D60563418F8F6100028B548 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D60563318F8F6100028B548 /* CoreGraphics.framework */; };
 		0D60563618F8F6100028B548 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D60563518F8F6100028B548 /* UIKit.framework */; };
@@ -26,6 +29,7 @@
 		0DA3F74D19021DA600BCD168 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA3F74C19021DA600BCD168 /* DetailViewController.m */; };
 		0DA3F7501902477E00BCD168 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA3F74F1902477E00BCD168 /* WebViewController.m */; };
 		0DA3F75319024C8A00BCD168 /* MyUIApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA3F75219024C8A00BCD168 /* MyUIApplication.m */; };
+		0DA3F756190276A300BCD168 /* TweetSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA3F755190276A300BCD168 /* TweetSheetViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D1D3D731904269D0089BC2B /* Icon@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2.png"; sourceTree = "<group>"; };
+		0D1D3D7B19042F830089BC2B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		0D1D3D80190465020089BC2B /* DirectMessagesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectMessagesTableViewController.h; sourceTree = "<group>"; };
+		0D1D3D81190465020089BC2B /* DirectMessagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectMessagesTableViewController.m; sourceTree = "<group>"; };
 		0D60562E18F8F6100028B548 /* TwitterClient01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClient01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D60563118F8F6100028B548 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0D60563318F8F6100028B548 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -68,6 +76,8 @@
 		0DA3F74F1902477E00BCD168 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		0DA3F75119024C8A00BCD168 /* MyUIApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyUIApplication.h; sourceTree = "<group>"; };
 		0DA3F75219024C8A00BCD168 /* MyUIApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyUIApplication.m; sourceTree = "<group>"; };
+		0DA3F754190276A300BCD168 /* TweetSheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetSheetViewController.h; sourceTree = "<group>"; };
+		0DA3F755190276A300BCD168 /* TweetSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetSheetViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +104,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D1D3D70190425C70089BC2B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0D1D3D731904269D0089BC2B /* Icon@2.png */,
+				0D1D3D7B19042F830089BC2B /* Default@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		0D60562518F8F6100028B548 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +146,7 @@
 		0D60563718F8F6100028B548 /* TwitterClient01 */ = {
 			isa = PBXGroup;
 			children = (
+				0D1D3D70190425C70089BC2B /* Images */,
 				0D60564018F8F6100028B548 /* AppDelegate.h */,
 				0D60564118F8F6100028B548 /* AppDelegate.m */,
 				0D60564318F8F6100028B548 /* Main.storyboard */,
@@ -144,6 +164,10 @@
 				0DA3F74F1902477E00BCD168 /* WebViewController.m */,
 				0DA3F75119024C8A00BCD168 /* MyUIApplication.h */,
 				0DA3F75219024C8A00BCD168 /* MyUIApplication.m */,
+				0DA3F754190276A300BCD168 /* TweetSheetViewController.h */,
+				0DA3F755190276A300BCD168 /* TweetSheetViewController.m */,
+				0D1D3D80190465020089BC2B /* DirectMessagesTableViewController.h */,
+				0D1D3D81190465020089BC2B /* DirectMessagesTableViewController.m */,
 			);
 			path = TwitterClient01;
 			sourceTree = "<group>";
@@ -255,6 +279,8 @@
 			files = (
 				0D60564A18F8F6100028B548 /* Images.xcassets in Resources */,
 				0D60563C18F8F6100028B548 /* InfoPlist.strings in Resources */,
+				0D1D3D7C19042F830089BC2B /* Default@2x.png in Resources */,
+				0D1D3D741904269D0089BC2B /* Icon@2.png in Resources */,
 				0D60564518F8F6100028B548 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +305,8 @@
 				0D60564818F8F6100028B548 /* ViewController.m in Sources */,
 				0D60564218F8F6100028B548 /* AppDelegate.m in Sources */,
 				0DA3F75319024C8A00BCD168 /* MyUIApplication.m in Sources */,
+				0DA3F756190276A300BCD168 /* TweetSheetViewController.m in Sources */,
+				0D1D3D82190465020089BC2B /* DirectMessagesTableViewController.m in Sources */,
 				0D60566818F912E30028B548 /* TimeLineTableViewController.m in Sources */,
 				0D60563E18F8F6100028B548 /* main.m in Sources */,
 				0DA3F74D19021DA600BCD168 /* DetailViewController.m in Sources */,

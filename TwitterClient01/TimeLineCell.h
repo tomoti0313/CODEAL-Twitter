@@ -12,6 +12,8 @@
 
 @property UILabel *tweetTextLabel;
 @property UILabel *nameLabel;
+@property UILabel *jnameLabel;
+@property UILabel *timeLabel;
 @property UIImageView *profileImageView;
 @property UIImage *image;
 @property int tweetTextLabelHeight;

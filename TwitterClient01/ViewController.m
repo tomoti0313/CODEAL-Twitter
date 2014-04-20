@@ -106,6 +106,16 @@
             timeLineTableViewController.identifier = self.identifier;
         }
     }
+    
+    if ([[segue identifier] isEqualToString:@"DirectMessagesSegue"]){
+        DirectMessagesTableViewController *directmessagesTableViewController =
+        [segue destinationViewController];
+        if([directmessagesTableViewController isKindOfClass:[DirectMessagesTableViewController class]]) {
+            directmessagesTableViewController.identifier = self.identifier;
+        }
+    }
+
 }
+
 
 @end

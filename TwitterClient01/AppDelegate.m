@@ -8,10 +8,14 @@
 
 #import "AppDelegate.h"
 
+
 @implementation AppDelegate
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //スプラッシュ時間設定
+    //sleep(3);
     // Override point for customization after application launch.
     self.navigationController = (UINavigationController *)self.window.rootViewController;
     return YES;

@@ -17,17 +17,29 @@
         // Initialization code
         
         self.tweetTextLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-        self.tweetTextLabel.font = [UIFont systemFontOfSize:14.0f];
+        self.tweetTextLabel.font = [UIFont fontWithName:@"CourierNewPS-BoldItalicMT" size:12.0f];
         self.tweetTextLabel.textColor = [UIColor blackColor];
         self.tweetTextLabel.numberOfLines = 0;
         //self.tweetTextLabel.highlightedTextColor = [UIColor blueColor];
         [self.contentView addSubview:self.tweetTextLabel];
         
         self.nameLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-        self.nameLabel.font = [UIFont systemFontOfSize:12.0f];
-        self.nameLabel.textColor = [UIColor blackColor];
+        self.nameLabel.font = [UIFont systemFontOfSize:10.0f];
+        self.nameLabel.textColor = [UIColor blueColor];
         //self.nameLabel.highlightedTextColor = [UIColor blueColor];
         [self.contentView addSubview:self.nameLabel];
+        
+        self.jnameLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        self.jnameLabel.font = [UIFont systemFontOfSize:10.0f];
+        self.jnameLabel.textColor = [UIColor grayColor];
+        //self.jnameLabel.highlightedTextColor = [UIColor blueColor];
+        [self.contentView addSubview:self.jnameLabel];
+        
+        self.timeLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        self.timeLabel.font = [UIFont systemFontOfSize:10.0f];
+        self.timeLabel.textColor = [UIColor grayColor];
+        //self.timeLabel.highlightedTextColor = [UIColor blueColor];
+        [self.contentView addSubview:self.timeLabel];
         
         self.profileImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
         self.profileImageView.image = self.image;
@@ -40,8 +52,10 @@
     [super layoutSubviews];
     
     self.profileImageView.frame = CGRectMake(5,5,48,48);
-    self.tweetTextLabel.frame = CGRectMake(58, 5, 257, self.tweetTextLabelHeight);
-    self.nameLabel.frame = CGRectMake(50, self.tweetTextLabelHeight + 15, 257, 12);
+    self.tweetTextLabel.frame = CGRectMake(58, 23, 257, self.tweetTextLabelHeight);
+    self.nameLabel.frame = CGRectMake(58, 13, 257, 15);
+    self.jnameLabel.frame = CGRectMake(58,3,257,15);
+    self.timeLabel.frame = CGRectMake(200, 3, 115, 15);
 }
 
 -(void)setSelected:(BOOL)selected animater:(BOOL)animated{
@@ -61,5 +75,4 @@
 
     // Configure the view for the selected state
 }
-
 @end
